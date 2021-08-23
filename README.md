@@ -4,18 +4,19 @@
 <!-- ----------------------------- -->
 
 
-What is Regex - character are used to defind these search parameters
+What is Regex? - character are used to defind these search parameters
 
-Why use Regex - used to extract information from input strings through a process of creating parameters for matches to known elements in strings of text, for exmaple, emails, passowrd, urls's, ect. 
-These search paramaters are based on pattern recognition 
-
-validating passwords, passing specific pieces of data onto other fucntions from a string of text, applicable to almost all programming languages 
+Regex is a method of extracting information from string data. Data is extracted through a porcess of creating search parameters for patterns and characters. These processed aid in various needs like validating passwords, emails, and urls as well as pulling our specific pieces of data from a string of characters. 
 
 
 Example of Regex - 
+
 This regex, or regular expression is for validating and matching a URL ^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$
 
-Table of Contents
+ `^(https?:\/\/)` = `https://` or `http://` 
+
+
+##Table of Contents
 Anchors
 Quantifiers
 OR Operator
@@ -24,51 +25,54 @@ Flags
 Grouping and Capturing
 Bracket Expressions
 Greedy and Lazy Match
-Regex Components
+Quick References 
+References 
 
 
-#Anchors#
+`abc` indicators in the following examples are used to mark true values.*
+
+#Anchors
 
 The important of the ^ Carrot and $ dollar sign characters - 
 
-^ = begins with 
-$ = ends with 
-^Exact Match$ = Exact Match
+`^` = begins with 
+`$` = ends with 
+`^Exact Match$` = Exact Match
 
 
-
-The use of the first component ^(https?:\/\/) is equivalent to `https://` or `http://` 
-
-question mark in Regex- 
-
-The use of the second component `([\/\w \.-]*)*\/?$`
-
- matches with //www.google.com/photos The question mark ? right before the dollar sign $ allows for the match of photos in the URL as that allows for optional search patterns after the slash / no match is found if the question mark ? is removed from the expression component or until photo in the URL is removed from the string.
 
 #Quantifiers
 
-
-defines the sequence of letters and number 
-What is a quantifier, 
-What is the use of the quantifier- 
+A quantifier defines the order of sequence of the search pattern you are looking for.
 
 Quantifiers are symbolized  `*, +, ? and {}`
 
 Defines the order of what you want to match. Quantifiers are used to designated the kind of match you would like to create to a string input into your app. For example. 
 
 The asterisk `*` will match a string in a string `abc*`, will match ab and c, in case of ab, abc or even abcc but not the b in ‘babc’
+`abc*` = `ab` `abc` `abcc` b`abc` `abccccccccc`
+ab matches the characters ab literally (case sensitive)
+c matches the character c with index 99 x 10
+
+an asterisk that appears after a sequence in parenthesis indicates a group that follows the same logic of the above example 
+`a(bc)*` = `a` `abc` abcc `abcbc` `abcbcbc`
 
 The plus `+` will match a string in a  `abc+`, will match the exact string abc or abccc but not 
+`abc+  ` = ab `abc` `abcc` `abccc`
 
 The question mark `?` will match a string in `aabc?`, will match the exact string (ab + c) but only 1 c, but not  `‘abccc’`
+`abc?` = `ab` `abc` abcc
 
-The curly braces `{ }` will match a string  `abc{2}`, will match the exact string `abcc` but not a 3rd or more c or a single c in case of `abc` or `abcccc`, 
-The numer 2 inside of these curly braces indicates the number of `c` in the search ans is equal to abcc but not `abc` or `abccc`
+The curly braces `{ }` indicate an index of iterations of a certain character. 
+`abc{2}` = `abcc` abc abcccc
 
-The number inside the curly braces, or index, can be set to match a range, for example  `{2,5}` wherein you can match `abcc`, `abccc`,`abccc`,or `abccccc`.
+
+The number inside the curly braces, or index, can be set to match a range, for example  `{2,5}`
+`abc{2,5}` = abc `abcc`, `abccc`,`abccc`, or `abccccc`.
 
 For the asterisk * quantifier, the URL 
- followed by the regex component expression `([\/\w \.-]*)*`. This component expression uses a combination of parts seperated by slashes `/` matches in the slashes in a URL, \w, matches with alpha numeric characters in case of URL string www1 as well as \.- in case of string URL with .com/. The inclusion of `.` and `-` allows for matches before those characters instead of only after those characters in the URL string. The exclusion of the asterisk `*` would prevent any match to the URL to be found or the exclusion of the conditions in the [] would also prevention any matches from being found in the URL string.
+
+
 
 #OR Operator
 
@@ -92,7 +96,7 @@ the brackets [ ] seem to do the same thing as the | but there’s something abou
 \d matches a digit (equivalent to [0-9])
 `\d`= abc ac acb aob a`2`b a`42`c
 
-\D is equavalent to the opposite of the \d command or qeual to an non-digit character. 
+`\D` is equivalent to the opposite of the \d command or equal to an non-digit character. 
 
 \w matches any word character (equivalent to [a-zA-Z0-9_])
 `\w` = `abc ac acb aob a2b a42c`
@@ -106,16 +110,9 @@ the brackets [ ] seem to do the same thing as the | but there’s something abou
 `.` = 
 
 
-in order to understand a special character as it's literal meaning they need to be encased in backslaches `\`
+In order to understand a special character as it's literal meaning they need to be encased in backslashes `\`
 `\$\20` = $20 
 
-
-Character classes \d, \w, and \s
-\d matches a number in any string, for example ab2c, 2 is found or de56fghi, 5 and 6 are are found in this string.
-
-\w finds any letter, number and underscore, for example 2bc3_a, or a 1 _ by themselves is found.
-
-\. matches any type of character, event special characters like &, $, *, >, / and .
 
 ##Flags
 
@@ -127,6 +124,7 @@ Regex uses slashes to define their search patterns for example `/abc/` in order 
 
 `/abc/i` = insensitive  = insensitive to uppercase vs lowercase 
 
+
 ##Grouping and Capturing
 
 Grouping and capturing is done with parenthesis ( ) to create a capture group
@@ -136,24 +134,34 @@ Using a(?:bc)* disables the capturing group, though the abc is still a match, a 
 `a(?:bc)*` = `abc` `a`c `a`cb `a`ob `a`2b `a`42c A87d
 
 
+
 ##Bracket Expressions
 
-Bracket expressions can be as the following [abc], which will match with the string containing either a,b or c singularly like a, b, or c, but also ab, bc or ac for example. You can also use [a-c] which is the same as [abc],Bracket expressions can be as the following [abc], which will match with the string containing either a,b or c singularly like a, b, or c, but also ab, bc or ac for example.
+Bracket Expressions define an array or characters to search for, thy represent the equivalent of `a` or `b` or `c` in the following example:
 
-You can also use [a-c] which is the same as [abc], meaning, it will find a match a through c. Think of brackets as a search through a range or spectrum, [a-zA-Z0-9] this will find any characters, from lower case a to lowercase z as well as their uppercase characters, while also finding the numbers 0 through 9.
+`[abc]` = `[a|b|c]` = `[a-c]` = `abc` `ac` `acb` `a`o`b` `a`2`b` `a`42`c` A87d
+
+
 
 ##Greedy and Lazy Match
 
-These are symbolized by *, + and { }. These are greedy operators. For example, this expression <.+> will match with <div> any text between </div>, whereas the question mark ? added to the expression will turn into a lazy one, <.+?>, making this only able to match, just the 2 <div> and </div> but none of the text in-between.
-Author
-I’m a student learning to code for full stack web development with 6 weeks left in the program. It’s been tough, and it’s been fun with moments of brilliance and getting thigs to work.
+These are symbolized by `*, +, < >` 
 
+Greedy and Lazy matches are characterized by expanding a search as needed, or a more generalized search 
+`<.*?>` = This is a `<Anything Inside this element>` test `</Anything inside this element>` test
 
-I wanted to be thorough, but not over do it since I can easily over think things. I can get very detailed about any subject, even in the case of Regex, and don’t want to get lost in the weeds of trial and error. I hope this much is at least adequate to get the ball rolling, but either way. You have to put it into practice, so I do recommend some of these sources, to try it out.
-
-https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285 and https://regex101.com/. Here are some additional sample expressions to try out
+##Quick References
 
 • Matching a Hex Value -- /^#?([a-f0-9]{6}|[a-f0-9]{3})$/
 • Matching an Email -- /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
 • Matching a URL -- /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/
 • Matching an HTML Tag -- /^<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)$/
+
+##References
+
+For more information please look to my references: 
+
+https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285
+
+https://regex101.com/
+
