@@ -12,16 +12,16 @@ This regex, or regular expression is for validating and matching a URL ^(https?:
 
 
 ## Table of Contents
-Anchors
-Quantifiers
-OR Operator
-Character Classes
-Flags
-Grouping and Capturing
-Bracket Expressions
-Greedy and Lazy Match
-Quick References 
-References 
+*Anchors
+*Quantifiers
+*OR Operator
+*Character Classes
+*Flags
+*Grouping and Capturing
+*Bracket Expressions
+*Greedy and Lazy Match
+*Quick References 
+*References 
 
 
 `abc` indicators in the following examples are used to mark true values.*
@@ -152,7 +152,7 @@ Greedy and Lazy matches are characterized by expanding a search as needed, or a 
 • Matching a URL -- /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/
 • Matching an HTML Tag -- /^<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)$/
 
-## References
+## *References
 
 For more information please look to my references: 
 
