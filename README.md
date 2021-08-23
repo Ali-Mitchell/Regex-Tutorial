@@ -1,12 +1,7 @@
 ## Regex-Tutorial
 
 
-<!-- ----------------------------- -->
-
-
-What is Regex? - character are used to defind these search parameters
-
-Regex is a method of extracting information from string data. Data is extracted through a porcess of creating search parameters for patterns and characters. These processed aid in various needs like validating passwords, emails, and urls as well as pulling our specific pieces of data from a string of characters. 
+Regex is a method of extracting information from string data. Data is extracted through a process of creating search parameters for patterns and characters. These processed aid in various needs like validating passwords, emails, and urls as well as pulling our specific pieces of data from a string of characters. 
 
 
 Example of Regex - 
@@ -16,7 +11,7 @@ This regex, or regular expression is for validating and matching a URL ^(https?:
  `^(https?:\/\/)` = `https://` or `http://` 
 
 
-##Table of Contents
+## Table of Contents
 Anchors
 Quantifiers
 OR Operator
@@ -31,7 +26,7 @@ References
 
 `abc` indicators in the following examples are used to mark true values.*
 
-#Anchors
+## Anchors
 
 The important of the ^ Carrot and $ dollar sign characters - 
 
@@ -41,7 +36,7 @@ The important of the ^ Carrot and $ dollar sign characters -
 
 
 
-#Quantifiers
+## Quantifiers
 
 A quantifier defines the order of sequence of the search pattern you are looking for.
 
@@ -74,7 +69,7 @@ For the asterisk * quantifier, the URL
 
 
 
-#OR Operator
+## OR Operator
 
 the `(|)` or `[ ]` brackets
 
@@ -91,7 +86,7 @@ An example of the [ ] used for a[bc] will match with ab or ac but not aa, bb, cc
 the brackets [ ] seem to do the same thing as the | but there’s something about the way it groups these matches,
 
 
-##Character Classes
+## Character Classes
 
 \d matches a digit (equivalent to [0-9])
 `\d`= abc ac acb aob a`2`b a`42`c
@@ -114,7 +109,7 @@ In order to understand a special character as it's literal meaning they need to 
 `\$\20` = $20 
 
 
-##Flags
+## Flags
 
 Regex uses slashes to define their search patterns for example `/abc/` in order to create commands that apply to these patterns flags are used outside of these slashes 
 
@@ -125,7 +120,7 @@ Regex uses slashes to define their search patterns for example `/abc/` in order 
 `/abc/i` = insensitive  = insensitive to uppercase vs lowercase 
 
 
-##Grouping and Capturing
+## Grouping and Capturing
 
 Grouping and capturing is done with parenthesis ( ) to create a capture group
 `a(bc)` = `abc` ac acb aob a2b a42c A87d
@@ -135,7 +130,7 @@ Using a(?:bc)* disables the capturing group, though the abc is still a match, a 
 
 
 
-##Bracket Expressions
+## Bracket Expressions
 
 Bracket Expressions define an array or characters to search for, thy represent the equivalent of `a` or `b` or `c` in the following example:
 
@@ -143,21 +138,21 @@ Bracket Expressions define an array or characters to search for, thy represent t
 
 
 
-##Greedy and Lazy Match
+## Greedy and Lazy Match
 
 These are symbolized by `*, +, < >` 
 
 Greedy and Lazy matches are characterized by expanding a search as needed, or a more generalized search 
 `<.*?>` = This is a `<Anything Inside this element>` test `</Anything inside this element>` test
 
-##Quick References
+## Quick References
 
 • Matching a Hex Value -- /^#?([a-f0-9]{6}|[a-f0-9]{3})$/
 • Matching an Email -- /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
 • Matching a URL -- /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/
 • Matching an HTML Tag -- /^<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)$/
 
-##References
+## References
 
 For more information please look to my references: 
 
