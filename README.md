@@ -132,22 +132,23 @@ Regex uses slashes to define their search patterns for example `/abc/` in order 
 Grouping and capturing is done with parenthesis ( ) to create a capture group
 `a(bc)` = `abc` ac acb aob a2b a42c A87d
 
-
 Using a(?:bc)* disables the capturing group, though the abc is still a match, a by itself or ‘acf’ is still a match but only if the expression contains the asterisk *. Without the asterisk * only abc will be matched.
+`a(?:bc)*` = `abc` `a`c `a`cb `a`ob `a`2b `a`42c A87d
 
-Bracket Expressions
+
+##Bracket Expressions
+
 Bracket expressions can be as the following [abc], which will match with the string containing either a,b or c singularly like a, b, or c, but also ab, bc or ac for example. You can also use [a-c] which is the same as [abc],Bracket expressions can be as the following [abc], which will match with the string containing either a,b or c singularly like a, b, or c, but also ab, bc or ac for example.
 
 You can also use [a-c] which is the same as [abc], meaning, it will find a match a through c. Think of brackets as a search through a range or spectrum, [a-zA-Z0-9] this will find any characters, from lower case a to lowercase z as well as their uppercase characters, while also finding the numbers 0 through 9.
 
-Greedy and Lazy Match
+##Greedy and Lazy Match
+
 These are symbolized by *, + and { }. These are greedy operators. For example, this expression <.+> will match with <div> any text between </div>, whereas the question mark ? added to the expression will turn into a lazy one, <.+?>, making this only able to match, just the 2 <div> and </div> but none of the text in-between.
 Author
 I’m a student learning to code for full stack web development with 6 weeks left in the program. It’s been tough, and it’s been fun with moments of brilliance and getting thigs to work.
 
 
-David Crockett / CastroOlympias @ GitHub
-Thoughts
 I wanted to be thorough, but not over do it since I can easily over think things. I can get very detailed about any subject, even in the case of Regex, and don’t want to get lost in the weeds of trial and error. I hope this much is at least adequate to get the ball rolling, but either way. You have to put it into practice, so I do recommend some of these sources, to try it out.
 
 https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285 and https://regex101.com/. Here are some additional sample expressions to try out
